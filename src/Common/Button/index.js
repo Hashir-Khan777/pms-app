@@ -1,39 +1,25 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Colors, Typography} from '../../Styles';
-import {Text, Touchable} from '..';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import {Typography} from '../../Styles';
+import {Text} from '..';
 
-const Button = ({theme, style, onPress, children}) => {
+const Button = ({buttonStyles, textStyles, onPress, children}) => {
   return (
-    <Touchable onPress={onPress}>
-      <View style={[styles.container, styles[theme], style]}>
-        <Text style={[textStyles.defaultText, textStyles[theme]]}>
-          {children}
-        </Text>
-      </View>
-    </Touchable>
+    <TouchableOpacity
+      onPress={onPress}
+      style={buttonStyles}
+      activeOpacity={0.6}>
+      <Text style={[style.defaultText, textStyles]}>{children}</Text>
+    </TouchableOpacity>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    width: 150,
-    paddingVertical: 7,
-    borderRadius: 20,
-    overflow: 'hidden',
-  },
-  blue: {backgroundColor: Colors.BLUE},
-  white: {backgroundColor: '#fff', borderWidth: 1, borderColor: Colors.BLUE},
-});
-const textStyles = StyleSheet.create({
+const style = StyleSheet.create({
   defaultText: {
     textAlign: 'center',
-    color: '#000',
+    color: '#fff',
     fontFamily: Typography.FONT_FAMILY_SEMI_BOLD,
-    fontSize: 18,
   },
-  blue: {color: '#fff'},
-  white: {color: Colors.BLUE},
 });
 
 export default Button;

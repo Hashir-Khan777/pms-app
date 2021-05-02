@@ -1,11 +1,12 @@
 import React from 'react';
 import {StyleSheet, TextInput} from 'react-native';
 
-const Input = ({placeholder, inputStyle, placeholderColor}) => (
+const Input = ({placeholder, inputStyle, placeholderColor, secure}) => (
   <TextInput
     placeholder={placeholder}
     style={[styles.input, inputStyle]}
     placeholderTextColor={placeholderColor}
+    secureTextEntry={secure}
   />
 );
 
