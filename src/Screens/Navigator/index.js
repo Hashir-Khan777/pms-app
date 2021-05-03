@@ -6,6 +6,7 @@ import {
 import React from 'react';
 import 'react-native-gesture-handler';
 import {Splash} from '..';
+import CreateAccount from '../CreateAccount';
 import SignIn from '../SignIn';
 
 const Stack = createStackNavigator();
@@ -44,6 +45,11 @@ const StackNavigation = () => {
     <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
+      <Stack.Screen
+        name="CreateAccount"
+        component={CreateAccount}
+        options={MyTransition}
+      />
     </Stack.Navigator>
   );
 };

@@ -7,8 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import {Button} from '../../Common';
-import Input from '../../Common/Input';
+import {Button, Input} from '../../Common';
 import {FONT_FAMILY_BOLD, FONT_FAMILY_MEDIUM} from '../../Styles/typography';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -40,7 +39,9 @@ const SignIn = ({navigation}) => {
         <View>
           <View style={styles.signupView}>
             <Text style={styles.signUpText}>Don't have an Account? </Text>
-            <Button onPress={() => navigation}>Sign up!</Button>
+            <Button onPress={() => navigation.navigate('CreateAccount')}>
+              Sign up!
+            </Button>
           </View>
           <Button
             textStyles={{
