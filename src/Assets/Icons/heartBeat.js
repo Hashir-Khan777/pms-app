@@ -1,0 +1,13 @@
+export default `<svg xmlns="http://www.w3.org/2000/svg" width="264.924" height="52.977" viewBox="0 0 264.924 52.977">
+<g id="Group_28" data-name="Group 28" transform="translate(-57.5 -621.5)">
+  <path id="Icon_material-grapheq" data-name="Icon material-grapheq" d="M11.077,29.308h3.288V9.577H11.077Zm6.577,6.577h3.288V3H17.654ZM4.5,22.731H7.788V16.154H4.5Zm19.731,6.577h3.288V9.577H24.231Zm6.577-13.154v6.577H34.1V16.154Z" transform="translate(53.5 629)" fill="#fff" stroke="#4665e1" stroke-width="1"/>
+  <path id="Icon_material-grapheq-2" data-name="Icon material-grapheq" d="M11.077,23.791h3.288V8.2H11.077Zm6.577,5.2h3.288V3H17.654ZM4.5,18.593H7.788V13.4H4.5Zm19.731,5.2h3.288V8.2H24.231Zm6.577-10.4v5.2H34.1V13.4Z" transform="translate(87.866 632)" fill="#fff" stroke="#4665e1" stroke-width="1" opacity="0.88"/>
+  <path id="Icon_material-grapheq-3" data-name="Icon material-grapheq" d="M11.077,35.007h3.288V11H11.077Zm6.577,8h3.288V3H17.654ZM4.5,27.005H7.788V19H4.5Zm19.731,8h3.288V11H24.231Zm6.577-16v8H34.1V19Z" transform="translate(119.164 625)" fill="#fff" stroke="#4665e1" stroke-width="1"/>
+  <path id="Icon_material-grapheq-4" data-name="Icon material-grapheq" d="M11.077,44.581h3.288V13.4H11.077Zm6.577,10.4h3.288V3H17.654ZM4.5,34.186H7.788v-10.4H4.5Zm19.731,10.4h3.288V13.4H24.231Zm6.577-20.791v10.4H34.1v-10.4Z" transform="translate(153.996 619)" fill="#fff" stroke="#4665e1" stroke-width="1" opacity="0.83"/>
+  <path id="Icon_material-grapheq-5" data-name="Icon material-grapheq" d="M11.077,29.308h3.288V9.577H11.077Zm6.577,6.577h3.288V3H17.654ZM4.5,22.731H7.788V16.154H4.5Zm19.731,6.577h3.288V9.577H24.231Zm6.577-13.154v6.577H34.1V16.154Z" transform="translate(188.828 629)" fill="#fff" stroke="#4665e1" stroke-width="1"/>
+  <path id="Icon_material-grapheq-6" data-name="Icon material-grapheq" d="M11.077,29.308h3.288V9.577H11.077Zm6.577,6.577h3.288V3H17.654ZM4.5,22.731H7.788V16.154H4.5Zm19.731,6.577h3.288V9.577H24.231Zm6.577-13.154v6.577H34.1V16.154Z" transform="translate(287.828 629)" fill="#fff" stroke="#4665e1" stroke-width="1"/>
+  <path id="Icon_material-grapheq-7" data-name="Icon material-grapheq" d="M11.077,23.791h3.288V8.2H11.077Zm6.577,5.2h3.288V3H17.654ZM4.5,18.593H7.788V13.4H4.5Zm19.731,5.2h3.288V8.2H24.231Zm6.577-10.4v5.2H34.1V13.4Z" transform="translate(220.126 632)" fill="#fff" stroke="#4665e1" stroke-width="1"/>
+  <path id="Icon_material-grapheq-8" data-name="Icon material-grapheq" d="M11.077,35.007h3.288V11H11.077Zm6.577,8h3.288V3H17.654ZM4.5,27.005H7.788V19H4.5Zm19.731,8h3.288V11H24.231Zm6.577-16v8H34.1V19Z" transform="translate(253.491 625)" fill="#fff" stroke="#4665e1" stroke-width="1" opacity="0.67"/>
+</g>
+</svg>
+`;

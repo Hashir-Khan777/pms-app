@@ -5,9 +5,8 @@ import {
 } from '@react-navigation/stack';
 import React from 'react';
 import 'react-native-gesture-handler';
-import {Splash} from '..';
-import CreateAccount from '../CreateAccount';
-import SignIn from '../SignIn';
+import {SignIn, CreateAccount, Splash, Home} from '..';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
 
@@ -42,7 +41,7 @@ const MyTransition = {
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
+    <Stack.Navigator initialRouteName="Home" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
       <Stack.Screen
@@ -50,8 +49,23 @@ const StackNavigation = () => {
         component={CreateAccount}
         options={MyTransition}
       />
+      <Stack.Screen
+        name="Home"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
     </Stack.Navigator>
   );
 };
 
-export default StackNavigation;
+const Tab = createBottomTabNavigator();
+
+const BottomTabNavigation = () => {
+  return (
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="Home" component={Home} />
+    </Tab.Navigator>
+  );
+};
+
+export {StackNavigation, BottomTabNavigation};

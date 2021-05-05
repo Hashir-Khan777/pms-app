@@ -131,7 +131,8 @@ const CreateAccount = ({navigation}) => {
             textStyles={{
               fontFamily: FONT_FAMILY_MEDIUM,
             }}
-            buttonStyles={styles.buttonStyles}>
+            buttonStyles={styles.buttonStyles}
+            onPress={() => navigation.navigate('Home')}>
             Sign Up
           </Button>
         </View>
