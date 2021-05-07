@@ -12,6 +12,12 @@ import breakHeart from './breakHeart';
 import line from './line';
 import meter from './meter';
 import chat from './chat';
+import {activeHome, inActiveHome} from './home';
+import {activeMedicine, inActiveMedicine} from './medicines';
+import {activeResults, inActiveResults} from './results';
+import {activeNotes, inActiveNotes} from './notes';
+import {activeAppointment, inActiveAppointment} from './appointment';
+import basket from './basket';
 
 export {
   history_blue,
@@ -28,4 +34,15 @@ export {
   line,
   meter,
   chat,
+  activeHome,
+  inActiveHome,
+  activeMedicine,
+  inActiveMedicine,
+  activeResults,
+  inActiveResults,
+  activeNotes,
+  inActiveNotes,
+  activeAppointment,
+  inActiveAppointment,
+  basket
 };
