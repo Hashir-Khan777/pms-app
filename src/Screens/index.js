@@ -8,6 +8,8 @@ import Results from './Results';
 import Notes from './Notes';
 import Appointment from './Appointment';
 import Prescription from './Prescription';
+import ResultDetails from './ResultDetails';
+import ClinicalNotes from './ClinicalNotes';
 
 export {
   StackNavigation,
@@ -19,5 +21,7 @@ export {
   Results,
   Notes,
   Appointment,
-  Prescription
+  Prescription,
+  ResultDetails,
+  ClinicalNotes,
 };

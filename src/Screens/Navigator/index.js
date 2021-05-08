@@ -15,6 +15,8 @@ import {
   Notes,
   Appointment,
   Prescription,
+  ResultDetails,
+  ClinicalNotes,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -80,6 +82,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name="Prescription"
         component={Prescription}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="ResultDetails"
+        component={ResultDetails}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="ClinicalNotes"
+        component={ClinicalNotes}
         options={MyTransition}
       />
     </Stack.Navigator>

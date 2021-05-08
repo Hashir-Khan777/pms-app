@@ -80,7 +80,9 @@ const Medicines = ({navigation}) => {
               </TouchableOpacity>
             );
           }}
-          ListHeaderComponent={<Header heading="Prescriptions" />}
+          ListHeaderComponent={
+            <Header heading="Prescriptions" navigation={navigation} />
+          }
         />
         <View style={styles.icon}>
           <Icons name={basket} iconHeight={20} />

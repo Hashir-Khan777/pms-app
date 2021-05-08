@@ -4,23 +4,15 @@ import {demo2} from '../../Assets/images';
 import {Header} from '../../Common';
 import {Typography} from '../../Styles';
 
-const Prescription = ({route}) => {
+const Prescription = ({route, navigation}) => {
   return (
     <SafeAreaView
-      style={{
-        flex: 1,
-        paddingHorizontal: 20,
-        backgroundColor: route.params.bgColor,
-      }}>
-      <Header heading="Prescriptions" />
-      <View
-        style={{flexDirection: 'row', alignItems: 'center', marginBottom: 10}}>
+      style={[styles.main, {backgroundColor: route.params.bgColor}]}>
+      <Header heading="Prescriptions" navigation={navigation} />
+      <View style={styles.imageView}>
         <Image source={demo2} />
         <View style={{paddingLeft: 10}}>
-          <Text
-            style={{fontSize: 15, fontFamily: Typography.FONT_FAMILY_MEDIUM}}>
-            Amit Raj
-          </Text>
+          <Text style={styles.name}>Amit Raj</Text>
           <Text style={{color: 'rgba(0, 0, 0, 0.5)'}}>Surry Clinic</Text>
         </View>
       </View>
@@ -47,4 +39,18 @@ const Prescription = ({route}) => {
 
 export default Prescription;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  imageView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  name: {
+    fontSize: 15,
+    fontFamily: Typography.FONT_FAMILY_MEDIUM,
+  },
+});
