@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Modal,
 } from 'react-native';
 import {demo} from '../../Assets/images';
 import IonIcons from 'react-native-vector-icons/Ionicons';
@@ -25,12 +26,38 @@ import {
   heartBeat,
   line,
   meter,
+  modalcalender,
   testResult,
   VideoAppointment,
 } from '../../Assets/Icons/index';
 import {Typography} from '../../Styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  const [checkedIn, setcheckedIn] = useState(false);
+
+  const CheckedIn = () => (
+    <Modal visible={checkedIn} transparent={true} animationType="fade">
+      <View style={styles.modalContainer}>
+        <View style={styles.modalView}>
+          <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <Icons name={modalcalender} iconHeight={100} />
+            <Text style={{fontSize: 19}}>Checked In!</Text>
+          </View>
+          <View style={{marginVertical: 15}}>
+            <Text style={{textAlign: 'center', fontSize: 15}}>
+              Please Take A Seat And Wait For Your Name To Be Called
+            </Text>
+          </View>
+          <Button
+            onPress={() => setcheckedIn(false)}
+            buttonStyles={styles.modalButton}>
+            Back Home
+          </Button>
+        </View>
+      </View>
+    </Modal>
+  );
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView>
@@ -67,17 +94,20 @@ const Home = () => {
                 text="Video Appointment - now"
                 buttonText="Join"
                 height={30}
+                onPress={() => navigation.navigate('VideoAppointment')}
               />
               <UpcomingEvents
                 name={testResult}
                 text="New test result is available"
                 buttonText="View"
                 height={30}
+                onPress={() => navigation.navigate('Results')}
               />
               <UpcomingEvents
                 name={doctor}
                 text="Dr. Smith - 14:30pm"
                 buttonText="Check-In"
+                onPress={() => setcheckedIn(true)}
                 height={30}
               />
               <View style={styles.healthDiaryView}>
@@ -139,7 +169,8 @@ const Home = () => {
                   textStyles={{
                     color: 'rgba(0, 0, 0, 0.5)',
                     fontFamily: Typography.FONT_FAMILY_REGULAR,
-                  }}>
+                  }}
+                  onPress={() => navigation.navigate('Results')}>
                   View
                 </Button>
               </View>
@@ -205,6 +236,7 @@ const Home = () => {
         }}>
         <Icons name={chat} iconHeight={50} />
       </View>
+      <CheckedIn />
     </SafeAreaView>
   );
 };
@@ -299,5 +331,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 7,
     borderRadius: 11,
+  },
+  modalView: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    width: '80%',
+    paddingHorizontal: 30,
+    paddingVertical: 30,
+    borderRadius: 20,
+  },
+  modalContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalButton: {
+    backgroundColor: '#282F4B',
+    borderRadius: 13,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
 });

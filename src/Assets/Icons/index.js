@@ -18,8 +18,29 @@ import {activeResults, inActiveResults} from './results';
 import {activeNotes, inActiveNotes} from './notes';
 import {activeAppointment, inActiveAppointment} from './appointment';
 import basket from './basket';
+import location from './location';
+import modalcalender from './modalcalender';
+import camera from './camera';
+import speaker from './speaker';
+import mute from './mute';
+import videoCamera from './videoCamera';
+import share from './share';
+import participent from './participent';
+import more from './more';
+import brain from './brain';
+import head from './head';
+import heart from './heart';
+import tooth from './tooth';
 
 export {
+  tooth,
+  heart,
+  head,
+  brain,
+  more,
+  participent,
+  share,
+  videoCamera,
   history_blue,
   history_gray,
   edit_black,
@@ -44,5 +65,10 @@ export {
   inActiveNotes,
   activeAppointment,
   inActiveAppointment,
-  basket
+  basket,
+  location,
+  modalcalender,
+  camera,
+  speaker,
+  mute,
 };

@@ -2,14 +2,14 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button, Icons} from '../../../Common';
 
-const UpcomingEvents = ({name, text, buttonText, height, iconColor}) => {
+const UpcomingEvents = ({name, text, buttonText, height, iconColor, onPress}) => {
   return (
     <View style={styles.mainView}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Icons name={name} fill={iconColor} iconHeight={height} />
         <Text style={{marginLeft: 10}}>{text}</Text>
       </View>
-      <Button textStyles={{color: 'rgba(0, 0, 0, 0.4)', fontSize: 14}}>
+      <Button textStyles={{color: 'rgba(0, 0, 0, 0.4)', fontSize: 14}} onPress={onPress}>
         {buttonText}
       </Button>
     </View>

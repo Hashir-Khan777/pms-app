@@ -17,6 +17,8 @@ import {
   Prescription,
   ResultDetails,
   ClinicalNotes,
+  VideoAppointement,
+  BookAppointment,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -32,6 +34,7 @@ import {
   activeAppointment,
   inActiveAppointment,
 } from '../../Assets/Icons';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -66,7 +69,7 @@ const MyTransition = {
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Home" headerMode={'none'}>
+    <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
       <Stack.Screen
@@ -94,6 +97,16 @@ const StackNavigation = () => {
         component={ClinicalNotes}
         options={MyTransition}
       />
+      <Stack.Screen
+        name="VideoAppointment"
+        component={VideoAppointement}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="BookAppointment"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
     </Stack.Navigator>
   );
 };
@@ -103,24 +116,11 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigation = () => {
   return (
     <Tab.Navigator
+      tabBar={props => <CustomTabBar {...props} />}
       initialRouteName="Home"
       tabBarOptions={{
         activeTintColor: '#E4BC2D',
         inactiveTintColor: 'rgba(255, 255, 255, 0.5)',
-        style: {
-          position: 'absolute',
-          backgroundColor: '#282F4B',
-          width: '90%',
-          borderRadius: 30,
-          marginBottom: 10,
-          alignSelf: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: 70,
-          paddingTop: 10,
-          paddingBottom: 10,
-          marginLeft: 20,
-        },
       }}>
       <Tab.Screen
         name="Home"
@@ -179,8 +179,134 @@ const BottomTabNavigation = () => {
           ),
         }}
       />
+      <Tab.Screen
+        name="BookAppointment"
+        component={BookAppointment}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Icons
+              name={focused ? activeAppointment : inActiveAppointment}
+              iconHeight={20}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
 
+const CustomTabBar = props => (
+  <View style={styles.main}>
+    <TouchableOpacity
+      onPress={() => props.navigation.navigate('Home')}
+      activeOpacity={0.6}
+      style={styles.tab}>
+      <Icons
+        name={props.state.index === 0 ? activeHome : inActiveHome}
+        iconHeight={20}
+      />
+      <Text
+        style={
+          props.state.index === 0
+            ? {color: props.activeTintColor}
+            : {color: props.inactiveTintColor}
+        }>
+        Home
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => props.navigation.navigate('Medicines')}
+      activeOpacity={0.6}
+      style={styles.tab}>
+      <Icons
+        name={props.state.index === 1 ? activeMedicine : inActiveMedicine}
+        iconHeight={20}
+      />
+      <Text
+        style={
+          props.state.index === 1
+            ? {color: props.activeTintColor}
+            : {color: props.inactiveTintColor}
+        }>
+        Medicines
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => props.navigation.navigate('Results')}
+      activeOpacity={0.6}
+      style={styles.tab}>
+      <Icons
+        name={props.state.index === 2 ? activeResults : inActiveResults}
+        iconHeight={20}
+      />
+      <Text
+        style={
+          props.state.index === 2
+            ? {color: props.activeTintColor}
+            : {color: props.inactiveTintColor}
+        }>
+        Results
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => props.navigation.navigate('Notes')}
+      activeOpacity={0.6}
+      style={styles.tab}>
+      <Icons
+        name={props.state.index === 3 ? activeNotes : inActiveNotes}
+        iconHeight={20}
+      />
+      <Text
+        style={
+          props.state.index === 3
+            ? {color: props.activeTintColor}
+            : {color: props.inactiveTintColor}
+        }>
+        Notes
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => props.navigation.navigate('Appointment')}
+      activeOpacity={0.6}
+      style={styles.tab}>
+      <Icons
+        name={props.state.index >= 4 ? activeAppointment : inActiveAppointment}
+        iconHeight={20}
+      />
+      <Text
+        style={
+          props.state.index === 4
+            ? {color: props.activeTintColor}
+            : {color: props.inactiveTintColor}
+        }>
+        Appt.
+      </Text>
+    </TouchableOpacity>
+  </View>
+);
+
 export {StackNavigation, BottomTabNavigation};
+
+const styles = StyleSheet.create({
+  main: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 0,
+    backgroundColor: '#282F4B',
+    width: '90%',
+    borderRadius: 30,
+    marginBottom: 10,
+    alignSelf: 'center',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: 70,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginLeft: 20,
+  },
+  tab: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

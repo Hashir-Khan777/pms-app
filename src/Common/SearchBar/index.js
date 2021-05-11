@@ -3,9 +3,9 @@ import {StyleSheet, View} from 'react-native';
 import Input from '../Input';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
-const SearchBar = () => {
+const SearchBar = ({inputStyles}) => {
   return (
-    <View style={styles.mainView}>
+    <View style={[styles.mainView, inputStyles]}>
       <IonIcon name="search-outline" color="#E4BC2D" size={25} />
       <Input
         placeholder="Search Doctors, Hospitals..."
@@ -21,7 +21,7 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
   inputStyle: {
-    width: '90%',
+    width: '85%',
     backgroundColor: '#fff',
     color: '#000',
   },
