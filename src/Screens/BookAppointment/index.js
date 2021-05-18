@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {Button, Header, Icons} from '../../Common';
@@ -17,32 +18,37 @@ const BookAppointment = ({navigation}) => {
     {
       _id: 1,
       image: brain,
+      selectedImage: '',
       tagLine: 'Cardioligist',
-      bgColor: true,
     },
     {
       _id: 2,
       image: head,
+      selectedImage: '',
       tagLine: 'Nurosergeon',
     },
     {
       _id: 3,
       image: heart,
+      selectedImage: '',
       tagLine: 'Cardioligist',
     },
     {
       _id: 4,
       image: tooth,
+      selectedImage: '',
       tagLine: 'Dentist',
     },
     {
       _id: 5,
       image: head,
+      selectedImage: '',
       tagLine: 'Cardioligist',
     },
     {
       _id: 6,
       image: heart,
+      selectedImage: '',
       tagLine: 'Cardioligist',
     },
   ];
@@ -74,6 +80,12 @@ const BookAppointment = ({navigation}) => {
     },
   ];
 
+  const [correctAns, setcorrectAns] = useState(0);
+
+  const pressAns = index => {
+    setcorrectAns(index);
+  };
+
   return (
     <SafeAreaView style={styles.main}>
       <View style={{flex: 1}}>
@@ -95,18 +107,23 @@ const BookAppointment = ({navigation}) => {
                 horizontal
                 keyExtractor={item => item._id}
                 showsHorizontalScrollIndicator={false}
-                renderItem={({item}) => {
+                renderItem={({item, index}) => {
                   return (
-                    <View
+                    <TouchableOpacity
+                      activeOpacity={0.8}
+                      onPress={() => pressAns(index)}
                       style={[
                         styles.slideCard,
-                        item.bgColor ? {backgroundColor: '#8AA14A'} : null,
+                        index === correctAns
+                          ? {backgroundColor: '#8AA14A'}
+                          : null,
                       ]}>
                       <Icons fill="#000" name={item.image} iconHeight={40} />
-                      <Text style={item.bgColor ? {color: '#FFF'} : null}>
+                      <Text
+                        style={{color: index === correctAns ? '#FFF' : '#000'}}>
                         {item.tagLine}
                       </Text>
-                    </View>
+                    </TouchableOpacity>
                   );
                 }}
               />
@@ -135,6 +152,7 @@ const BookAppointment = ({navigation}) => {
                 textStyles={{
                   fontFamily: Typography.FONT_FAMILY_MEDIUM,
                 }}
+                onPress={() => navigation.navigate('AppointmentTiming')}
                 buttonStyles={styles.button}>
                 Book
               </Button>

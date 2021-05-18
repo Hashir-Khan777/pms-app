@@ -42,6 +42,7 @@ const Appointment = ({navigation}) => {
               <Header
                 heading="Appointment"
                 heading2="Book An"
+                navigation={navigation}
                 searchBar={true}
               />
               <Text style={{marginBottom: 15, fontSize: 17}}>

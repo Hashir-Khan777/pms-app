@@ -12,6 +12,8 @@ import ResultDetails from './ResultDetails';
 import ClinicalNotes from './ClinicalNotes';
 import VideoAppointement from './VideoAppointment';
 import BookAppointment from './BookAppointment';
+import AppointmentTiming from './AppointmentTimings';
+import AppointmentCalender from './AppointmentCalender';
 
 export {
   StackNavigation,
@@ -28,4 +30,6 @@ export {
   ClinicalNotes,
   VideoAppointement,
   BookAppointment,
+  AppointmentTiming,
+  AppointmentCalender,
 };

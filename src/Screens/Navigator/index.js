@@ -19,6 +19,8 @@ import {
   ClinicalNotes,
   VideoAppointement,
   BookAppointment,
+  AppointmentTiming,
+  AppointmentCalender,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -69,7 +71,7 @@ const MyTransition = {
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
+    <Stack.Navigator initialRouteName="Home" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
       <Stack.Screen
@@ -107,6 +109,16 @@ const StackNavigation = () => {
         component={BottomTabNavigation}
         options={MyTransition}
       />
+      <Stack.Screen
+        name="AppointmentTiming"
+        component={AppointmentTiming}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="AppointmentCalender"
+        component={AppointmentCalender}
+        options={MyTransition}
+      />
     </Stack.Navigator>
   );
 };
@@ -122,75 +134,12 @@ const BottomTabNavigation = () => {
         activeTintColor: '#E4BC2D',
         inactiveTintColor: 'rgba(255, 255, 255, 0.5)',
       }}>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Icons name={focused ? activeHome : inActiveHome} iconHeight={20} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Medicines"
-        component={Medicines}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Icons
-              name={focused ? activeMedicine : inActiveMedicine}
-              iconHeight={20}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Results"
-        component={Results}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Icons
-              name={focused ? activeResults : inActiveResults}
-              iconHeight={20}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notes"
-        component={Notes}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Icons
-              name={focused ? activeNotes : inActiveNotes}
-              iconHeight={20}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Appointment"
-        component={Appointment}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Icons
-              name={focused ? activeAppointment : inActiveAppointment}
-              iconHeight={20}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="BookAppointment"
-        component={BookAppointment}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Icons
-              name={focused ? activeAppointment : inActiveAppointment}
-              iconHeight={20}
-            />
-          ),
-        }}
-      />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Medicines" component={Medicines} />
+      <Tab.Screen name="Results" component={Results} />
+      <Tab.Screen name="Notes" component={Notes} />
+      <Tab.Screen name="Appointment" component={Appointment} />
+      <Tab.Screen name="BookAppointment" component={BookAppointment} />
     </Tab.Navigator>
   );
 };
