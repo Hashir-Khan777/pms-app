@@ -14,6 +14,9 @@ import VideoAppointement from './VideoAppointment';
 import BookAppointment from './BookAppointment';
 import AppointmentTiming from './AppointmentTimings';
 import AppointmentCalender from './AppointmentCalender';
+import MyMessages from './MyMessages';
+import AddContact from './AddContact';
+import Message from './Message';
 
 export {
   StackNavigation,
@@ -32,4 +35,7 @@ export {
   BookAppointment,
   AppointmentTiming,
   AppointmentCalender,
+  MyMessages,
+  AddContact,
+  Message,
 };

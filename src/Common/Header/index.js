@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {demo} from '../../Assets/images';
-import IonIcons from 'react-native-vector-icons/Ionicons';
+import IonIcons from 'react-native-vector-icons/Ionicons'; 
 import {Typography} from '../../Styles';
 import {SearchBar} from '..';
 

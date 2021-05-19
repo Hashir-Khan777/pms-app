@@ -21,6 +21,9 @@ import {
   BookAppointment,
   AppointmentTiming,
   AppointmentCalender,
+  MyMessages,
+  AddContact,
+  Message,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -119,6 +122,17 @@ const StackNavigation = () => {
         component={AppointmentCalender}
         options={MyTransition}
       />
+      <Stack.Screen
+        name="MyMessages"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="AddContact"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen name="Message" component={Message} options={MyTransition} />
     </Stack.Navigator>
   );
 };
@@ -140,6 +154,8 @@ const BottomTabNavigation = () => {
       <Tab.Screen name="Notes" component={Notes} />
       <Tab.Screen name="Appointment" component={Appointment} />
       <Tab.Screen name="BookAppointment" component={BookAppointment} />
+      <Tab.Screen name="MyMessages" component={MyMessages} />
+      <Tab.Screen name="AddContact" component={AddContact} />
     </Tab.Navigator>
   );
 };
@@ -219,7 +235,11 @@ const CustomTabBar = props => (
       activeOpacity={0.6}
       style={styles.tab}>
       <Icons
-        name={props.state.index >= 4 ? activeAppointment : inActiveAppointment}
+        name={
+          props.state.index === 4 || props.state.index === 5
+            ? activeAppointment
+            : inActiveAppointment
+        }
         iconHeight={20}
       />
       <Text

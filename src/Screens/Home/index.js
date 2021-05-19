@@ -228,14 +228,16 @@ const Home = ({navigation}) => {
           </View>
         </View>
       </ScrollView>
-      <View
+      <TouchableOpacity
         style={{
           position: 'absolute',
           bottom: 155,
           right: 15,
-        }}>
+        }}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('MyMessages')}>
         <Icons name={chat} iconHeight={50} />
-      </View>
+      </TouchableOpacity>
       <CheckedIn />
     </SafeAreaView>
   );
