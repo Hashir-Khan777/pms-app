@@ -113,6 +113,7 @@ const Home = ({navigation}) => {
               <View style={styles.healthDiaryView}>
                 <Text>Health Dairy</Text>
                 <Button
+                  onPress={() => navigation.navigate('HealthDiary')}
                   textStyles={{
                     color: 'rgba(0, 0, 0, 0.5)',
                     fontFamily: Typography.FONT_FAMILY_REGULAR,

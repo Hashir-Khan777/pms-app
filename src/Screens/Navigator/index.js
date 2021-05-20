@@ -24,6 +24,9 @@ import {
   MyMessages,
   AddContact,
   Message,
+  HealthDiary,
+  AddHealthManually,
+  ManualHealth,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -74,7 +77,7 @@ const MyTransition = {
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Home" headerMode={'none'}>
+    <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
       <Stack.Screen
@@ -130,6 +133,21 @@ const StackNavigation = () => {
       <Stack.Screen
         name="AddContact"
         component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="HealthDiary"
+        component={HealthDiary}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="AddHealthManually"
+        component={AddHealthManually}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="ManualHealth"
+        component={ManualHealth}
         options={MyTransition}
       />
       <Stack.Screen name="Message" component={Message} options={MyTransition} />

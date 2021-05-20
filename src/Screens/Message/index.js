@@ -23,7 +23,6 @@ const Message = ({navigation}) => {
 
   const RenderMessage = props => (
     <View style={{flex: 1, paddingHorizontal: 20}}>
-      {/* {console.log(props)} */}
       <View
         style={
           props.currentMessage.user._id === 2
@@ -99,13 +98,7 @@ const Message = ({navigation}) => {
   );
 
   const RenderInput = props => (
-    <View
-      style={{
-        flexDirection: 'row',
-        backgroundColor: '#FFF',
-        paddingHorizontal: 20,
-        alignItems: 'center',
-      }}>
+    <View style={styles.mainRenderInput}>
       <TouchableOpacity>
         <IonIcons name="camera" size={25} color="#E4BC2D" />
       </TouchableOpacity>
@@ -176,14 +169,7 @@ const Message = ({navigation}) => {
   return (
     <SafeAreaView style={styles.main}>
       <View style={{flex: 1}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: 10,
-            paddingHorizontal: 20,
-          }}>
+        <View style={styles.mainView}>
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => navigation.goBack()}>
@@ -234,5 +220,18 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: '#EFF3FE',
+  },
+  mainRenderInput: {
+    flexDirection: 'row',
+    backgroundColor: '#FFF',
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  mainView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 10,
+    paddingHorizontal: 20,
   },
 });

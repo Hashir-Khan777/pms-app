@@ -7,8 +7,8 @@ import VideoAppointment from './VideoAppointment';
 import testResult from './testResult';
 import doctor from './doctor';
 import heartBeat from './heartBeat';
-import blood from './blood';
-import breakHeart from './breakHeart';
+import {blood, blackBlood} from './blood';
+import {breakHeart, yellowBreakHeart} from './breakHeart';
 import line from './line';
 import meter from './meter';
 import chat from './chat';
@@ -31,8 +31,14 @@ import brain from './brain';
 import head from './head';
 import heart from './heart';
 import tooth from './tooth';
+import height from './height';
+import weight from './weight';
 
 export {
+  yellowBreakHeart,
+  blackBlood,
+  weight,
+  height,
   tooth,
   heart,
   head,

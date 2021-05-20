@@ -57,3 +57,8 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+src/Screens/AddHealthManually/index.js
+android/hs_err_pid3264.log
+android/hs_err_pid5616.log
+android/hs_err_pid4452.log
+android/hs_err_pid4452.log

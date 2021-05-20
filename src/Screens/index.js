@@ -17,8 +17,14 @@ import AppointmentCalender from './AppointmentCalender';
 import MyMessages from './MyMessages';
 import AddContact from './AddContact';
 import Message from './Message';
+import HealthDiary from './HealthDiary';
+import AddHealthManually from './AddHealthManually';
+import ManualHealth from './ManualHealth';
 
 export {
+  ManualHealth,
+  AddHealthManually,
+  HealthDiary,
   StackNavigation,
   Splash,
   SignIn,
