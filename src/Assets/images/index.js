@@ -7,5 +7,17 @@ import video from './video.png';
 import chat1 from './chat1.jpg';
 import chat2 from './chat2.jpg';
 import cameraImage from './cameraImage.jpg';
+import focusFace from './focusface.png';
 
-export {demo, demo2, image1, image2, image3, video, chat1, chat2, cameraImage};
+export {
+  demo,
+  demo2,
+  image1,
+  image2,
+  image3,
+  video,
+  chat1,
+  chat2,
+  cameraImage,
+  focusFace,
+};
