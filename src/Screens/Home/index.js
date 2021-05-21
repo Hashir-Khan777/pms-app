@@ -65,7 +65,11 @@ const Home = ({navigation}) => {
           <View style={styles.profileView}>
             <View>
               <View style={styles.mainImageView}>
-                <Image source={demo} style={{borderRadius: 10}} />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  onPress={() => navigation.navigate('Profile')}>
+                  <Image source={demo} style={{borderRadius: 10}} />
+                </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.changeProfileButton}
                   activeOpacity={0.6}>

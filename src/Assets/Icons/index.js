@@ -2,7 +2,7 @@ import edit_black from './edit_black';
 import history_blue from './history_blue';
 import history_gray from './history_gray';
 import backIcon from './backIcon';
-import calender from './calender';
+import {calender, calenderBlack} from './calender';
 import VideoAppointment from './VideoAppointment';
 import testResult from './testResult';
 import doctor from './doctor';
@@ -33,8 +33,27 @@ import heart from './heart';
 import tooth from './tooth';
 import height from './height';
 import weight from './weight';
+import edit from './edit';
+import description from './description';
+import notification from './notification';
+import privacy from './privacy';
+import language from './language';
+import payment from './payment';
+import childAccount from './childAccount';
+import instantSignIn from './instantSignIn';
+import rate from './rate';
 
 export {
+  calenderBlack,
+  rate,
+  childAccount,
+  instantSignIn,
+  payment,
+  language,
+  privacy,
+  notification,
+  description,
+  edit,
   yellowBreakHeart,
   blackBlood,
   weight,

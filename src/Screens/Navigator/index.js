@@ -27,6 +27,10 @@ import {
   HealthDiary,
   AddHealthManually,
   ManualHealth,
+  Profile,
+  Edit,
+  Notification,
+  Language,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -77,7 +81,7 @@ const MyTransition = {
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
+    <Stack.Navigator initialRouteName="Home" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
       <Stack.Screen
@@ -151,6 +155,26 @@ const StackNavigation = () => {
         options={MyTransition}
       />
       <Stack.Screen name="Message" component={Message} options={MyTransition} />
+      <Stack.Screen
+        name="Profile"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="Edit"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="Notification"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="Language"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
     </Stack.Navigator>
   );
 };
@@ -174,6 +198,10 @@ const BottomTabNavigation = () => {
       <Tab.Screen name="BookAppointment" component={BookAppointment} />
       <Tab.Screen name="MyMessages" component={MyMessages} />
       <Tab.Screen name="AddContact" component={AddContact} />
+      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Edit" component={Edit} />
+      <Tab.Screen name="Notification" component={Notification} />
+      <Tab.Screen name="Language" component={Language} />
     </Tab.Navigator>
   );
 };

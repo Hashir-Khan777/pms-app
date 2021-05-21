@@ -20,8 +20,16 @@ import Message from './Message';
 import HealthDiary from './HealthDiary';
 import AddHealthManually from './AddHealthManually';
 import ManualHealth from './ManualHealth';
+import Profile from './Profile';
+import Edit from './Edit';
+import Notification from './Notification';
+import Language from './Language';
 
 export {
+  Language,
+  Notification,
+  Edit,
+  Profile,
   ManualHealth,
   AddHealthManually,
   HealthDiary,

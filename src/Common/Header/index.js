@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {demo} from '../../Assets/images';
-import IonIcons from 'react-native-vector-icons/Ionicons'; 
+import IonIcons from 'react-native-vector-icons/Ionicons';
 import {Typography} from '../../Styles';
 import {SearchBar} from '..';
 
@@ -12,6 +12,7 @@ const HeaderComponent = ({
   color,
   headingStyles,
   searchBar = false,
+  image = true,
 }) => (
   <View>
     <View style={styles.main}>
@@ -37,9 +38,13 @@ const HeaderComponent = ({
           {heading}
         </Text>
       </View>
-      <View>
-        <Image source={demo} style={{borderRadius: 10}} />
-      </View>
+      {image ? (
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => navigation.navigate('Profile')}>
+          <Image source={demo} style={{borderRadius: 10}} />
+        </TouchableOpacity>
+      ) : null}
     </View>
     {searchBar ? (
       <View style={{marginTop: 35}}>

@@ -8,6 +8,7 @@ import chat1 from './chat1.jpg';
 import chat2 from './chat2.jpg';
 import cameraImage from './cameraImage.jpg';
 import focusFace from './focusface.png';
+import profile from './profile.png';
 
 export {
   demo,
@@ -20,4 +21,5 @@ export {
   chat2,
   cameraImage,
   focusFace,
+  profile,
 };
