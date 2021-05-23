@@ -69,7 +69,6 @@ const Appointment = ({navigation}) => {
                   <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icons name={location} iconHeight={15} />
                     <Text style={{color: 'rgba(0,0,0,0.5)'}} numberOfLines={1}>
-                      {' '}
                       {item.doctorName}
                     </Text>
                   </View>

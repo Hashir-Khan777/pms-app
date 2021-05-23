@@ -28,8 +28,12 @@ import Payment from './Payment';
 import PaymentHistory from './PaymentHistory';
 import InstantSignIn from './InstantSignIn';
 import ChildAccount from './ChildAccount';
+import RepeatPrescription from './RepeatPrescrption';
+import Medication from './Medication';
 
 export {
+  Medication,
+  RepeatPrescription,
   ChildAccount,
   InstantSignIn,
   PaymentHistory,

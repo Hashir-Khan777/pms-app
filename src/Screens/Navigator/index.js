@@ -35,6 +35,8 @@ import {
   PaymentHistory,
   InstantSignIn,
   ChildAccount,
+  RepeatPrescription,
+  Medication,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -85,7 +87,7 @@ const MyTransition = {
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Home" headerMode={'none'}>
+    <Stack.Navigator initialRouteName="Splash" headerMode={'none'}>
       <Stack.Screen name="Splash" component={Splash} options={MyTransition} />
       <Stack.Screen name="SignIn" component={SignIn} options={MyTransition} />
       <Stack.Screen
@@ -197,6 +199,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name="ChildAccount"
         component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="RepeatPrescrption"
+        component={RepeatPrescription}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="Medication"
+        component={Medication}
         options={MyTransition}
       />
     </Stack.Navigator>

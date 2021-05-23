@@ -84,9 +84,11 @@ const Medicines = ({navigation}) => {
             <Header heading="Prescriptions" navigation={navigation} />
           }
         />
-        <View style={styles.icon}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('RepeatPrescrption')}
+          style={styles.icon}>
           <Icons name={basket} iconHeight={20} />
-        </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

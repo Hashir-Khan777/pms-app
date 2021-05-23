@@ -48,8 +48,10 @@ import creditCard from './creditCard';
 import history from './history';
 import hospital from './hospital';
 import activateClinic from './activateClinic';
+import tick from './tick';
 
 export {
+  tick,
   activateClinic,
   hospital,
   history,

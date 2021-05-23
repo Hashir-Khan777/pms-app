@@ -9,8 +9,10 @@ import chat2 from './chat2.jpg';
 import cameraImage from './cameraImage.jpg';
 import focusFace from './focusface.png';
 import profile from './profile.png';
+import medicine from './medicine.png';
 
 export {
+  medicine,
   demo,
   demo2,
   image1,
