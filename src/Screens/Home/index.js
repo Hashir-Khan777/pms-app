@@ -226,7 +226,8 @@ const Home = ({navigation}) => {
                 </View>
                 <Button
                   buttonStyles={styles.manageProfile}
-                  textStyles={{fontFamily: Typography.FONT_FAMILY_MEDIUM}}>
+                  textStyles={{fontFamily: Typography.FONT_FAMILY_MEDIUM}}
+                  onPress={() => navigation.navigate('Profile')}>
                   Manage
                 </Button>
               </View>
