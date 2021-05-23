@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
-  Image,
   ImageBackground,
   SafeAreaView,
   ScrollView,
@@ -9,14 +8,17 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Modal,
 } from 'react-native';
 import {profile} from '../../Assets/images';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import {Button, Icons} from '../../Common';
 import {
+  activateClinic,
   childAccount,
   description,
   edit,
+  hospital,
   instantSignIn,
   language,
   notification,
@@ -28,6 +30,48 @@ import {Typography} from '../../Styles';
 import {Section} from './components';
 
 const Profile = ({navigation}) => {
+  const [clinic, setclinic] = useState(false);
+  const [activeClinic, setactiveClinic] = useState(false);
+
+  const ClinicModal = () => (
+    <Modal visible={clinic} transparent animationType="fade">
+      <View style={styles.modalView}>
+        <View style={styles.modalContainer}>
+          <View style={{alignItems: 'center', marginBottom: 10}}>
+            <Icons iconHeight={50} name={hospital} />
+            <Text>Activate Clinic</Text>
+          </View>
+          <Text>Enter your Date of Birth</Text>
+          <TextInput style={styles.input} />
+          <Button
+            buttonStyles={styles.button}
+            onPress={() => {
+              setclinic(false);
+              setactiveClinic(true);
+            }}>
+            Activate
+          </Button>
+        </View>
+      </View>
+    </Modal>
+  );
+
+  const ActiveClinicModal = () => (
+    <Modal visible={activeClinic} transparent animationType="fade">
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={() => setactiveClinic(false)}
+        style={styles.modalView}>
+        <View style={styles.modalContainer}>
+          <View style={{alignItems: 'center', marginBottom: 10}}>
+            <Icons iconHeight={50} name={activateClinic} />
+            <Text>Clinic Activated</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    </Modal>
+  );
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <ImageBackground
@@ -125,14 +169,17 @@ const Profile = ({navigation}) => {
               <Section
                 icon={<Icons name={payment} iconHeight={60} />}
                 title="Payment"
+                onPress={() => navigation.navigate('Payment')}
               />
               <Section
                 icon={<Icons name={instantSignIn} iconHeight={60} />}
                 title="Instant Sign in"
+                onPress={() => navigation.navigate('InstantSignIn')}
               />
               <Section
                 icon={<Icons name={childAccount} iconHeight={60} />}
                 title="Associate Child's Account"
+                onPress={() => navigation.navigate('ChildAccount')}
               />
               <Section
                 icon={<Icons name={rate} iconHeight={60} />}
@@ -147,12 +194,18 @@ const Profile = ({navigation}) => {
                   placeholderTextColor="rgba(0, 0, 0, 0, 0.6)"
                   style={styles.input}
                 />
-                <Button buttonStyles={styles.button}>Activate</Button>
+                <Button
+                  buttonStyles={styles.button}
+                  onPress={() => setclinic(true)}>
+                  Activate
+                </Button>
               </View>
             </View>
           </View>
         </ScrollView>
       </ImageBackground>
+      <ClinicModal />
+      <ActiveClinicModal />
     </SafeAreaView>
   );
 };
@@ -160,6 +213,13 @@ const Profile = ({navigation}) => {
 export default Profile;
 
 const styles = StyleSheet.create({
+  modalContainer: {
+    backgroundColor: '#FFF',
+    paddingHorizontal: 10,
+    paddingVertical: 20,
+    width: '90%',
+    borderRadius: 20,
+  },
   input: {
     backgroundColor: '#EFF3FE',
     borderRadius: 14,
@@ -224,5 +284,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: '100%',
+  },
+  modalView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
 });

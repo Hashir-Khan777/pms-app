@@ -24,8 +24,16 @@ import Profile from './Profile';
 import Edit from './Edit';
 import Notification from './Notification';
 import Language from './Language';
+import Payment from './Payment';
+import PaymentHistory from './PaymentHistory';
+import InstantSignIn from './InstantSignIn';
+import ChildAccount from './ChildAccount';
 
 export {
+  ChildAccount,
+  InstantSignIn,
+  PaymentHistory,
+  Payment,
   Language,
   Notification,
   Edit,

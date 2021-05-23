@@ -42,8 +42,20 @@ import payment from './payment';
 import childAccount from './childAccount';
 import instantSignIn from './instantSignIn';
 import rate from './rate';
+import paymentMethod from './paymentMethod';
+import bankAccount from './bankAccount';
+import creditCard from './creditCard';
+import history from './history';
+import hospital from './hospital';
+import activateClinic from './activateClinic';
 
 export {
+  activateClinic,
+  hospital,
+  history,
+  creditCard,
+  bankAccount,
+  paymentMethod,
   calenderBlack,
   rate,
   childAccount,

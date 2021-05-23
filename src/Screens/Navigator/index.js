@@ -31,6 +31,10 @@ import {
   Edit,
   Notification,
   Language,
+  Payment,
+  PaymentHistory,
+  InstantSignIn,
+  ChildAccount,
 } from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Icons} from '../../Common';
@@ -175,6 +179,26 @@ const StackNavigation = () => {
         component={BottomTabNavigation}
         options={MyTransition}
       />
+      <Stack.Screen
+        name="Payment"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="PaymentHistory"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="InstantSignIn"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
+      <Stack.Screen
+        name="ChildAccount"
+        component={BottomTabNavigation}
+        options={MyTransition}
+      />
     </Stack.Navigator>
   );
 };
@@ -202,6 +226,10 @@ const BottomTabNavigation = () => {
       <Tab.Screen name="Edit" component={Edit} />
       <Tab.Screen name="Notification" component={Notification} />
       <Tab.Screen name="Language" component={Language} />
+      <Tab.Screen name="Payment" component={Payment} />
+      <Tab.Screen name="PaymentHistory" component={PaymentHistory} />
+      <Tab.Screen name="InstantSignIn" component={InstantSignIn} />
+      <Tab.Screen name="ChildAccount" component={ChildAccount} />
     </Tab.Navigator>
   );
 };

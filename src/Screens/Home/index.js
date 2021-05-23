@@ -72,7 +72,8 @@ const Home = ({navigation}) => {
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.changeProfileButton}
-                  activeOpacity={0.6}>
+                  activeOpacity={0.6}
+                  onPress={() => navigation.navigate('Edit')}>
                   <Text style={{color: '#fff'}}>Change Profile </Text>
                   <IonIcons name="chevron-down-outline" color="#fff" />
                 </TouchableOpacity>
